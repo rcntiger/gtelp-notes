@@ -1,0 +1,406 @@
+/* ===========================================================
+   G-TELP Level 2 핵심노트 — 공통 스타일
+   Concept: 시험지 채점표 / 정오표 느낌의 "판정" 미학.
+   문법은 O/X가 명확한 규칙의 집합이라는 인상을 시각화한다.
+   =========================================================== */
+
+:root {
+  --bg: #FAFAF6;
+  --paper: #FFFFFF;
+  --ink: #1C1F26;
+  --ink-soft: #565B66;
+  --line: #DCD7C9;
+  --line-soft: #EBE7DA;
+  --pass: #2F5D53;      /* 정답/규칙 - 딥 그린 */
+  --pass-bg: #EAF1EC;
+  --fail: #A6432F;      /* 오답/함정 - 브릭 레드 */
+  --fail-bg: #F7EAE6;
+  --mark: #B8862B;      /* 강조 - 골드 */
+  --mark-bg: #FBF3E1;
+  --radius: 3px;
+
+  --font-head: 'Noto Serif KR', serif;
+  --font-body: 'Pretendard Std', 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 22px 90px;
+}
+
+/* ---------- 상단 스탬프형 헤더 ---------- */
+
+.stamp-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+
+.stamp-header .site-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.stamp-header .level-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--pass);
+  border: 1px solid var(--pass);
+  padding: 2px 8px;
+  border-radius: var(--radius);
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 10px 0 28px;
+}
+.breadcrumb a { color: var(--ink-soft); }
+
+/* ---------- 헤드라인 ---------- */
+
+h1.page-title {
+  font-family: var(--font-head);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.page-sub {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin: 0 0 34px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+h2.section-title {
+  font-family: var(--font-head);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 44px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2.section-title .idx {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 2px 7px;
+  border-radius: var(--radius);
+}
+
+h3.sub-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 22px 0 10px;
+}
+
+p { margin: 0 0 12px; }
+
+/* ---------- 규칙 카드 (핵심 문법 규칙) ---------- */
+
+.rule-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 14px 0;
+}
+
+.rule-card .rule-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.rule-card .rule-body {
+  font-size: 15.5px;
+}
+
+.rule-card .rule-form {
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  margin: 8px 0;
+  display: inline-block;
+}
+
+/* ---------- O/X 예문 대조 ---------- */
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+
+.ex {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.ex .mark {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ex.ok { background: var(--pass-bg); }
+.ex.ok .mark { color: var(--pass); }
+
+.ex.ng { background: var(--fail-bg); }
+.ex.ng .mark { color: var(--fail); }
+.ex.ng .strike { text-decoration: line-through; text-decoration-color: var(--fail); }
+
+.ex .kr {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* ---------- 함정 노트 ---------- */
+
+.trap {
+  background: var(--mark-bg);
+  border: 1px solid var(--mark);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 14.5px;
+}
+
+.trap .trap-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--mark);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ---------- 체크리스트 ---------- */
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0;
+}
+
+.checklist li {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 15px;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist .box {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  border: 1.5px solid var(--ink-soft);
+  border-radius: 2px;
+}
+
+/* ---------- 표 ---------- */
+
+table.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 14px;
+}
+
+.ref-table th, .ref-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.ref-table th {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.ref-table tr:nth-child(even) td { background: var(--line-soft); }
+
+/* ---------- 빈출 순위 배지 ---------- */
+
+.freq-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.freq-high { background: var(--fail-bg); color: var(--fail); }
+.freq-mid  { background: var(--mark-bg); color: var(--mark); }
+.freq-low  { background: var(--pass-bg); color: var(--pass); }
+
+/* ---------- 하단 네비게이션 ---------- */
+
+.nav-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+}
+
+.nav-footer a {
+  flex: 1;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  transition: border-color 0.15s ease;
+}
+.nav-footer a:hover { border-color: var(--ink); }
+.nav-footer a.next { text-align: right; }
+.nav-footer .dir { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); margin-bottom: 3px; }
+
+.to-index {
+  text-align: center;
+  margin-top: 14px;
+}
+.to-index a { color: var(--ink-soft); font-size: 13px; text-decoration: underline; }
+
+/* ---------- 인덱스 페이지 전용 ---------- */
+
+.hero {
+  padding: 46px 0 34px;
+  border-bottom: 3px solid var(--ink);
+  margin-bottom: 8px;
+}
+.hero .kicker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--pass);
+  margin-bottom: 10px;
+}
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: 40px;
+  line-height: 1.3;
+  margin: 0 0 14px;
+}
+.hero p { color: var(--ink-soft); font-size: 15.5px; max-width: 56ch; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 26px 0 40px;
+}
+.stat-cell {
+  background: var(--paper);
+  padding: 16px;
+}
+.stat-cell .num { font-family: var(--font-head); font-size: 24px; font-weight: 700; }
+.stat-cell .label { font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; }
+
+.group-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin: 38px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-list { display: flex; flex-direction: column; gap: 10px; }
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+}
+.card-link:hover { border-color: var(--ink); }
+.card-link .ct-main { display: flex; align-items: center; gap: 12px; }
+.card-link .ct-no {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  width: 20px;
+}
+.card-link .ct-name { font-size: 15.5px; font-weight: 500; }
+.card-link .ct-desc { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
+.card-link .ct-arrow { color: var(--ink-soft); font-family: var(--font-mono); font-size: 14px; }
+
+/* ---------- 반응형 ---------- */
+
+@media (max-width: 480px) {
+  .wrap { padding: 26px 16px 70px; }
+  h1.page-title { font-size: 26px; }
+  .hero h1 { font-size: 30px; }
+  .stat-row { grid-template-columns: 1fr; }
+}
+
+/* ---------- 접근성 ---------- */
+
+a:focus-visible, .card-link:focus-visible {
+  outline: 2px solid var(--pass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
