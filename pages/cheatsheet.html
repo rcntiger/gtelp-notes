@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신호어 총정리 — G-TELP Level 2 핵심노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+  .signal-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 7px;
+  }
+  .signal-row .sig {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .signal-row .arw { color: var(--ink-soft); font-family: var(--font-mono); }
+  .signal-row .ans {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--pass);
+    text-align: right;
+  }
+  .signal-row .form {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 1px;
+  }
+  @media (max-width: 480px) {
+    .signal-row { grid-template-columns: 1fr; gap: 4px; }
+    .signal-row .arw { display: none; }
+    .signal-row .ans { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="stamp-header">
+    <span class="site-name">GTELP-NOTES</span>
+    <span class="level-tag">LEVEL 2</span>
+  </div>
+  <div class="breadcrumb"><a href="../index.html">전체 목록</a> / 신호어 총정리</div>
+
+  <h1 class="page-title">신호어 총정리</h1>
+  <p class="page-sub">시험장 들어가기 10분 전에 이 페이지만 훑는다. 왼쪽 신호어를 문장에서 찾으면 오른쪽이 정답이다. 문법 26문항 중 상당수가 이 표 안에서 해결된다.</p>
+
+  <h2 class="section-title"><span class="idx">01</span>시제 — 시간 표현이 곧 정답</h2>
+  <div class="signal-row"><span class="sig">right now / at the moment</span><span class="arw">→</span><span class="ans">현재진행<span class="form">is/are + -ing</span></span></div>
+  <div class="signal-row"><span class="sig">when + 주어 + <b>과거</b>동사</span><span class="arw">→</span><span class="ans">과거진행<span class="form">was/were + -ing</span></span></div>
+  <div class="signal-row"><span class="sig">when + 주어 + <b>현재</b>동사 (미래 의미)</span><span class="arw">→</span><span class="ans">미래진행<span class="form">will be + -ing</span></span></div>
+  <div class="signal-row"><span class="sig">since + 과거시점 / for the past 기간</span><span class="arw">→</span><span class="ans">현재완료진행<span class="form">have been + -ing</span></span></div>
+  <div class="signal-row"><span class="sig">before / by the time + <b>과거</b>동사</span><span class="arw">→</span><span class="ans">과거완료진행<span class="form">had been + -ing</span></span></div>
+  <div class="signal-row"><span class="sig">by the time + <b>현재</b>동사 &amp; for + 기간</span><span class="arw">→</span><span class="ans">미래완료진행<span class="form">will have been + -ing</span></span></div>
+
+  <h2 class="section-title"><span class="idx">02</span>가정법 — If절만 보면 끝</h2>
+  <div class="signal-row"><span class="sig">If + 주어 + <b>과거동사 / were</b></span><span class="arw">→</span><span class="ans">would + 동사원형</span></div>
+  <div class="signal-row"><span class="sig">If + 주어 + <b>had p.p.</b></span><span class="arw">→</span><span class="ans">would have p.p.</span></div>
+  <div class="signal-row"><span class="sig">If + had p.p. &amp; 주절에 <b>now/today</b></span><span class="arw">→</span><span class="ans">would + 동사원형<span class="form">혼합가정법</span></span></div>
+  <div class="signal-row"><span class="sig">Were / Had / Should로 문장 시작</span><span class="arw">→</span><span class="ans">If 생략 도치<span class="form">위 규칙 그대로 적용</span></span></div>
+
+  <h2 class="section-title"><span class="idx">03</span>should 생략 — 앞 단어만 확인</h2>
+  <div class="signal-row"><span class="sig">suggest, recommend, insist, demand,<br>require, request, propose, order, urge</span><span class="arw">→</span><span class="ans">that + 주어 + <b>동사원형</b></span></div>
+  <div class="signal-row"><span class="sig">It is necessary / essential / important /<br>imperative / crucial / vital / mandatory</span><span class="arw">→</span><span class="ans">that + 주어 + <b>동사원형</b></span></div>
+
+  <h2 class="section-title"><span class="idx">04</span>준동사 — 앞 동사가 결정</h2>
+  <div class="signal-row"><span class="sig">want, hope, plan, decide, agree, expect,<br>refuse, promise, manage, afford, fail</span><span class="arw">→</span><span class="ans">to + 동사원형</span></div>
+  <div class="signal-row"><span class="sig">enjoy, avoid, consider, finish, mind,<br>quit, deny, postpone, keep, admit, involve</span><span class="arw">→</span><span class="ans">동사원형 + -ing</span></div>
+  <div class="signal-row"><span class="sig">전치사(in, on, at, of, for) 바로 뒤</span><span class="arw">→</span><span class="ans">동사원형 + -ing</span></div>
+  <div class="signal-row"><span class="sig">look forward to / be used to / object to</span><span class="arw">→</span><span class="ans">동사원형 + -ing<span class="form">to는 전치사</span></span></div>
+
+  <h2 class="section-title"><span class="idx">05</span>연결어 — 뒤에 오는 것이 결정</h2>
+  <div class="signal-row"><span class="sig">뒤에 <b>명사(구)</b>만 있음</span><span class="arw">→</span><span class="ans">전치사<span class="form">despite, because of, during</span></span></div>
+  <div class="signal-row"><span class="sig">뒤에 <b>주어 + 동사</b>가 있음</span><span class="arw">→</span><span class="ans">접속사<span class="form">although, because, while</span></span></div>
+
+  <h2 class="section-title"><span class="idx">06</span>관계사 — 뒤 문장의 완전성</h2>
+  <div class="signal-row"><span class="sig">뒤 문장에 주어·목적어가 <b>빠짐</b></span><span class="arw">→</span><span class="ans">관계대명사<span class="form">who / which / that</span></span></div>
+  <div class="signal-row"><span class="sig">뒤 문장이 <b>완전함</b> + 선행사가 장소/시간</span><span class="arw">→</span><span class="ans">관계부사<span class="form">where / when</span></span></div>
+  <div class="signal-row"><span class="sig">앞에 <b>콤마(,)</b>가 있음</span><span class="arw">→</span><span class="ans">that 절대 불가<span class="form">who / which만</span></span></div>
+  <div class="signal-row"><span class="sig">선행사가 <b>아예 없음</b></span><span class="arw">→</span><span class="ans">what</span></div>
+
+  <h2 class="section-title"><span class="idx">07</span>시험장 행동 요령</h2>
+  <ul class="checklist">
+    <li><span class="box"></span>문법은 문장 전체를 해석하지 말고 <b>빈칸 주변 신호어</b>만 스캔한다</li>
+    <li><span class="box"></span>선택지에 진행형이 하나뿐이면 대개 그것이 답이다</li>
+    <li><span class="box"></span>한 문항에 30초 이상 쓰지 않는다 — 넘기고 나중에 돌아온다</li>
+    <li><span class="box"></span>모르는 문항도 반드시 마킹한다 (오답 감점 없음)</li>
+    <li><span class="box"></span>청취는 문제지에 메모가 허용되는지 시험 안내를 확인하고, 허용 범위 내에서 노트테이킹</li>
+  </ul>
+
+  <div class="nav-footer">
+    <a class="prev" href="grammar-10-modals.html"><span class="dir">← 이전</span>10. 조동사</a>
+    <a class="next" href="practice.html"><span class="dir">다음 →</span>실전 연습문제</a>
+  </div>
+  <div class="to-index"><a href="../index.html">전체 목록 보기</a></div>
+
+</div>
+</body>
+</html>

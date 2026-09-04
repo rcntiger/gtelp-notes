@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>실전 연습문제 — G-TELP Level 2 핵심노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+  .q {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .q .qno {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .q .stem { font-size: 15px; margin-bottom: 12px; }
+  .q .blank { font-family: var(--font-mono); color: var(--mark); font-weight: 700; }
+  .opts { display: flex; flex-direction: column; gap: 6px; }
+  .opt {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    padding: 8px 11px;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    background: var(--bg);
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
+  }
+  .opt:hover { border-color: var(--ink-soft); }
+  .opt .lt { font-family: var(--font-mono); color: var(--ink-soft); flex-shrink: 0; }
+  .opt.correct { background: var(--pass-bg); border-color: var(--pass); }
+  .opt.correct .lt { color: var(--pass); font-weight: 700; }
+  .opt.wrong { background: var(--fail-bg); border-color: var(--fail); }
+  .opt.wrong .lt { color: var(--fail); font-weight: 700; }
+  .sol {
+    display: none;
+    margin-top: 11px;
+    padding: 11px 13px;
+    background: var(--mark-bg);
+    border-left: 3px solid var(--mark);
+    border-radius: var(--radius);
+    font-size: 13.5px;
+  }
+  .sol.show { display: block; }
+  .sol .sol-label {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--mark);
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .scorebar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 11px 16px;
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .scorebar button {
+    background: none;
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="stamp-header">
+    <span class="site-name">GTELP-NOTES</span>
+    <span class="level-tag">LEVEL 2</span>
+  </div>
+  <div class="breadcrumb"><a href="../index.html">전체 목록</a> / 실전 연습문제</div>
+
+  <h1 class="page-title">실전 연습문제 20</h1>
+  <p class="page-sub">보기를 누르면 정답 여부와 해설이 바로 나온다. 틀린 문항은 해당 노트 페이지로 돌아가 신호어를 다시 확인할 것.</p>
+
+  <div class="scorebar">
+    <span id="score">푼 문항 0 · 정답 0</span>
+    <button onclick="resetAll()">다시 풀기</button>
+  </div>
+
+  <div id="quiz"></div>
+
+  <div class="nav-footer">
+    <a class="prev" href="cheatsheet.html"><span class="dir">← 이전</span>신호어 총정리</a>
+    <a class="next" href="vocab.html"><span class="dir">다음 →</span>독해 패러프레이징</a>
+  </div>
+  <div class="to-index"><a href="../index.html">전체 목록 보기</a></div>
+
+</div>
+
+<script>
+const DATA = [
+  {s:"Sarah ___ at the community center since she graduated from college in 2018.",
+   o:["volunteers","has been volunteering","volunteered","will volunteer"],a:1,
+   e:"since + 과거시점(2018)이 있으므로 현재완료진행. 지금까지 계속되는 동작이다.",p:"시제"},
+  {s:"By the time the inspector arrived, the crew ___ the equipment for over an hour.",
+   o:["has checked","checks","had been checking","will have checked"],a:2,
+   e:"by the time 뒤 동사가 arrived(과거)이므로, 그 이전부터 진행된 과거완료진행.",p:"시제"},
+  {s:"If the department ___ more funding last year, it could have hired additional staff.",
+   o:["received","had received","receives","would receive"],a:1,
+   e:"주절이 could have p.p.이므로 가정법 과거완료. If절은 had p.p.",p:"가정법"},
+  {s:"If I ___ fluent in Spanish, I would apply for the overseas position.",
+   o:["am","was","were","had been"],a:2,
+   e:"주절이 would + 동사원형이므로 가정법 과거. be동사는 인칭과 무관하게 were.",p:"가정법"},
+  {s:"The committee recommended that the proposal ___ before the deadline.",
+   o:["is revised","be revised","was revised","will be revised"],a:1,
+   e:"recommend는 당위성 동사. that절에 (should)가 생략되어 동사원형만 남는다. 수동이므로 be revised.",p:"should 생략"},
+  {s:"It is imperative that every applicant ___ the required documents in person.",
+   o:["submits","submitted","submit","is submitting"],a:2,
+   e:"이성적 판단 형용사 imperative 뒤이므로 주어가 단수여도 동사원형 submit.",p:"should 생략"},
+  {s:"The manager decided ___ the meeting until the following week.",
+   o:["postponing","to postpone","postpone","postponed"],a:1,
+   e:"decide는 to부정사만 목적어로 취한다.",p:"to부정사"},
+  {s:"They finally finished ___ the annual safety report yesterday.",
+   o:["to write","write","writing","written"],a:2,
+   e:"finish는 동명사만 목적어로 취한다.",p:"동명사"},
+  {s:"We look forward to ___ from you regarding the proposal.",
+   o:["hear","hearing","heard","be heard"],a:1,
+   e:"look forward to의 to는 전치사이므로 뒤에 동명사가 온다.",p:"동명사"},
+  {s:"Please remember ___ the alarm system before leaving the station.",
+   o:["activating","to activate","activated","activation"],a:1,
+   e:"앞으로 할 일을 기억하라는 뜻이므로 remember to V. 동명사면 '과거에 했던 것을 기억한다'가 된다.",p:"준동사 의미변화"},
+  {s:"___ in a hurry, the report contained several typographical errors.",
+   o:["Writing","Written","Write","To write"],a:1,
+   e:"report는 쓰여지는 대상이므로 수동. Being written에서 Being이 생략된 형태.",p:"분사"},
+  {s:"The audience found the lecture so ___ that many of them left early.",
+   o:["bored","boring","bore","to bore"],a:1,
+   e:"lecture가 지루함을 유발하는 주체이므로 -ing. 사람이 느끼면 bored.",p:"분사"},
+  {s:"___ the heavy snowfall, all scheduled inspections were carried out on time.",
+   o:["Although","Despite","Because","While"],a:1,
+   e:"뒤에 명사구(the heavy snowfall)만 있으므로 전치사 Despite. 절이 왔다면 Although.",p:"연결어"},
+  {s:"Not only the supervisor but also the new recruits ___ required to attend the drill.",
+   o:["is","was","were","has been"],a:2,
+   e:"not only A but also B는 동사를 가까운 B(the new recruits, 복수)에 맞춘다.",p:"연결어"},
+  {s:"The station ___ we conducted the training is being renovated.",
+   o:["which","that","where","what"],a:2,
+   e:"뒤 문장(we conducted the training)이 완전하고 선행사가 장소이므로 관계부사 where.",p:"관계사"},
+  {s:"Mr. Park, ___ has served for twenty years, will retire next month.",
+   o:["that","who","which","what"],a:1,
+   e:"콤마 뒤 계속적 용법에는 that을 쓸 수 없다. 선행사가 사람이므로 who.",p:"관계사"},
+  {s:"___ surprised everyone was how quickly the team responded.",
+   o:["That","Which","What","It"],a:2,
+   e:"선행사가 없고 명사절 주어 역할을 하므로 what(= the thing that).",p:"관계사"},
+  {s:"He left all the lights on, so he ___ be planning to come back soon.",
+   o:["must","cannot","need not","would rather"],a:0,
+   e:"근거가 있는 강한 추측이므로 must(~임에 틀림없다).",p:"조동사"},
+  {s:"You ___ have reminded me — I had already marked it on my calendar.",
+   o:["must not","should","need not","cannot"],a:2,
+   e:"need not have p.p. = ~할 필요가 없었는데 (실제로는 했다).",p:"조동사"},
+  {s:"The new policy requires employees to log their hours, ___ their overtime, and submit reports weekly.",
+   o:["tracking","to track","track","tracked"],a:2,
+   e:"병치구조. to log, (to) track, (to) submit이 and로 연결되므로 동사원형 track.",p:"병치구조"}
+];
+
+const quiz = document.getElementById('quiz');
+let done = 0, correct = 0;
+
+function render() {
+  quiz.innerHTML = '';
+  DATA.forEach((d, i) => {
+    const div = document.createElement('div');
+    div.className = 'q';
+    div.innerHTML =
+      '<div class="qno">Q' + (i+1) + ' · ' + d.p + '</div>' +
+      '<div class="stem">' + d.s.replace('___', '<span class="blank">_______</span>') + '</div>' +
+      '<div class="opts">' +
+        d.o.map((t, j) =>
+          '<button class="opt" data-q="' + i + '" data-o="' + j + '">' +
+          '<span class="lt">(' + 'abcd'[j] + ')</span><span>' + t + '</span></button>'
+        ).join('') +
+      '</div>' +
+      '<div class="sol" id="sol' + i + '"><div class="sol-label">해설</div>' + d.e + '</div>';
+    quiz.appendChild(div);
+  });
+
+  quiz.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const qi = +btn.dataset.q, oi = +btn.dataset.o;
+      const box = btn.closest('.q');
+      if (box.dataset.answered) return;
+      box.dataset.answered = '1';
+      done++;
+      if (oi === DATA[qi].a) { btn.classList.add('correct'); correct++; }
+      else {
+        btn.classList.add('wrong');
+        box.querySelectorAll('.opt')[DATA[qi].a].classList.add('correct');
+      }
+      document.getElementById('sol' + qi).classList.add('show');
+      updateScore();
+    });
+  });
+}
+
+function updateScore() {
+  document.getElementById('score').textContent = '푼 문항 ' + done + ' · 정답 ' + correct;
+}
+
+function resetAll() { done = 0; correct = 0; render(); updateScore(); }
+
+render();
+</script>
+</body>
+</html>
