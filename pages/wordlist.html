@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빈출단어 암기 — G-TELP Level 2 핵심노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+  .toolbar {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--ink); color: var(--paper);
+    padding: 10px 14px; border-radius: var(--radius);
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 24px;
+    font-family: var(--font-mono); font-size: 12.5px;
+  }
+  .toolbar button {
+    background: none; border: 1px solid var(--paper); color: var(--paper);
+    font-family: var(--font-mono); font-size: 12px;
+    padding: 4px 10px; border-radius: var(--radius); cursor: pointer;
+  }
+  .toolbar button.on { background: var(--paper); color: var(--ink); }
+  .toolbar .count { margin-left: auto; opacity: 0.75; }
+
+  .w-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 14px; }
+  .w-table th {
+    background: var(--ink); color: var(--paper);
+    font-weight: 500; font-size: 12.5px; padding: 7px 10px; text-align: left;
+  }
+  .w-table td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; }
+  .w-table tr:nth-child(even) td { background: var(--line-soft); }
+  .w-table .en { font-weight: 600; width: 30%; }
+  .w-table .syn { color: var(--pass); font-size: 13px; width: 36%; }
+  .w-table .kr { color: var(--ink-soft); font-size: 13px; }
+
+  body.hide-kr .w-table .kr,
+  body.hide-kr .w-table .syn {
+    color: transparent; background: var(--line-soft);
+    border-radius: 2px; cursor: pointer; user-select: none;
+  }
+  body.hide-kr .w-table .kr.reveal,
+  body.hide-kr .w-table .syn.reveal {
+    background: none; cursor: default;
+  }
+  body.hide-kr .w-table .kr.reveal { color: var(--ink-soft); }
+  body.hide-kr .w-table .syn.reveal { color: var(--pass); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="stamp-header">
+    <span class="site-name">GTELP-NOTES</span>
+    <span class="level-tag">LEVEL 2</span>
+  </div>
+  <div class="breadcrumb"><a href="../index.html">전체 목록</a> / 빈출단어 암기</div>
+
+  <h1 class="page-title">꼭 외워야 할 빈출단어</h1>
+  <p class="page-sub">지텔프 어휘 문제는 "본문의 이 단어와 <b>가장 가까운 뜻</b>은?" 형식이다. 그래서 단어 하나가 아니라 <b>동의어 짝</b>으로 외워야 바로 점수가 된다. 아래는 그 짝 기준으로 묶은 목록.</p>
+
+  <div class="toolbar">
+    <button id="btn-hide" onclick="toggleHide()">뜻 가리기</button>
+    <span>가린 칸을 누르면 하나씩 열림</span>
+    <span class="count">총 181단어</span>
+  </div>
+
+  <h2 class="section-title"><span class="idx">01</span>동사 — 최우선 암기</h2>
+  <table class="w-table">
+    <tr><th>단어</th><th>동의어 (선택지에 나오는 형태)</th><th>뜻</th></tr>
+    <tr><td class="en">acquire</td><td class="syn">obtain, gain, get</td><td class="kr">획득하다, 습득하다</td></tr>
+    <tr><td class="en">abandon</td><td class="syn">give up, desert, forsake</td><td class="kr">버리다, 포기하다</td></tr>
+    <tr><td class="en">accommodate</td><td class="syn">house, hold, adapt to</td><td class="kr">수용하다, 맞추다</td></tr>
+    <tr><td class="en">accumulate</td><td class="syn">gather, pile up, amass</td><td class="kr">축적하다, 모으다</td></tr>
+    <tr><td class="en">adapt</td><td class="syn">adjust, modify, conform</td><td class="kr">적응하다, 조정하다</td></tr>
+    <tr><td class="en">advocate</td><td class="syn">support, promote, endorse</td><td class="kr">옹호하다, 지지하다</td></tr>
+    <tr><td class="en">alleviate</td><td class="syn">relieve, ease, lessen</td><td class="kr">완화하다, 덜어주다</td></tr>
+    <tr><td class="en">anticipate</td><td class="syn">expect, foresee, predict</td><td class="kr">예상하다, 기대하다</td></tr>
+    <tr><td class="en">assemble</td><td class="syn">gather, collect, put together</td><td class="kr">모으다, 조립하다</td></tr>
+    <tr><td class="en">attain</td><td class="syn">achieve, reach, accomplish</td><td class="kr">달성하다, 이루다</td></tr>
+    <tr><td class="en">attribute (to)</td><td class="syn">credit to, ascribe to</td><td class="kr">~의 탓/덕분으로 돌리다</td></tr>
+    <tr><td class="en">cease</td><td class="syn">stop, halt, discontinue</td><td class="kr">중단하다, 그치다</td></tr>
+    <tr><td class="en">compel</td><td class="syn">force, oblige, require</td><td class="kr">강요하다</td></tr>
+    <tr><td class="en">compile</td><td class="syn">collect, put together, assemble</td><td class="kr">편찬하다, 모으다</td></tr>
+    <tr><td class="en">comprise</td><td class="syn">consist of, be made up of</td><td class="kr">구성하다, ~로 이루어지다</td></tr>
+    <tr><td class="en">conduct</td><td class="syn">carry out, perform, run</td><td class="kr">수행하다, 실시하다</td></tr>
+    <tr><td class="en">confine</td><td class="syn">limit, restrict, enclose</td><td class="kr">국한하다, 가두다</td></tr>
+    <tr><td class="en">consolidate</td><td class="syn">combine, merge, strengthen</td><td class="kr">통합하다, 강화하다</td></tr>
+    <tr><td class="en">contribute (to)</td><td class="syn">add to, help, donate</td><td class="kr">기여하다, 기부하다</td></tr>
+    <tr><td class="en">convey</td><td class="syn">communicate, express, carry</td><td class="kr">전달하다</td></tr>
+    <tr><td class="en">cultivate</td><td class="syn">grow, develop, foster</td><td class="kr">재배하다, 기르다</td></tr>
+    <tr><td class="en">demonstrate</td><td class="syn">show, prove, illustrate</td><td class="kr">증명하다, 보여주다</td></tr>
+    <tr><td class="en">depict</td><td class="syn">describe, portray, represent</td><td class="kr">묘사하다</td></tr>
+    <tr><td class="en">derive (from)</td><td class="syn">come from, originate, stem</td><td class="kr">유래하다, 얻다</td></tr>
+    <tr><td class="en">deteriorate</td><td class="syn">worsen, decline, degrade</td><td class="kr">악화되다</td></tr>
+    <tr><td class="en">devise</td><td class="syn">invent, create, design</td><td class="kr">고안하다</td></tr>
+    <tr><td class="en">diminish</td><td class="syn">decrease, reduce, lessen</td><td class="kr">줄어들다, 감소시키다</td></tr>
+    <tr><td class="en">dispute</td><td class="syn">challenge, question, argue</td><td class="kr">반박하다, 논쟁하다</td></tr>
+    <tr><td class="en">eliminate</td><td class="syn">remove, get rid of, erase</td><td class="kr">제거하다</td></tr>
+    <tr><td class="en">emerge</td><td class="syn">appear, arise, come out</td><td class="kr">나타나다, 부상하다</td></tr>
+    <tr><td class="en">emphasize</td><td class="syn">stress, highlight, underline</td><td class="kr">강조하다</td></tr>
+    <tr><td class="en">enact</td><td class="syn">pass, legislate, establish</td><td class="kr">(법을) 제정하다</td></tr>
+    <tr><td class="en">encounter</td><td class="syn">meet, face, come across</td><td class="kr">마주치다, 직면하다</td></tr>
+    <tr><td class="en">endure</td><td class="syn">last, bear, tolerate</td><td class="kr">지속되다, 견디다</td></tr>
+    <tr><td class="en">enhance</td><td class="syn">improve, boost, strengthen</td><td class="kr">향상시키다</td></tr>
+    <tr><td class="en">establish</td><td class="syn">found, set up, create</td><td class="kr">설립하다, 확립하다</td></tr>
+    <tr><td class="en">exceed</td><td class="syn">surpass, go beyond, outdo</td><td class="kr">초과하다, 능가하다</td></tr>
+    <tr><td class="en">exhibit</td><td class="syn">show, display, reveal</td><td class="kr">보이다, 전시하다</td></tr>
+    <tr><td class="en">facilitate</td><td class="syn">ease, help, enable</td><td class="kr">촉진하다, 용이하게 하다</td></tr>
+    <tr><td class="en">flourish</td><td class="syn">thrive, prosper, boom</td><td class="kr">번창하다</td></tr>
+    <tr><td class="en">generate</td><td class="syn">produce, create, cause</td><td class="kr">발생시키다</td></tr>
+    <tr><td class="en">hinder</td><td class="syn">prevent, hamper, obstruct</td><td class="kr">방해하다</td></tr>
+    <tr><td class="en">implement</td><td class="syn">carry out, execute, apply</td><td class="kr">시행하다</td></tr>
+    <tr><td class="en">impose</td><td class="syn">enforce, levy, place on</td><td class="kr">부과하다, 강요하다</td></tr>
+    <tr><td class="en">incorporate</td><td class="syn">include, integrate, combine</td><td class="kr">포함하다, 통합하다</td></tr>
+    <tr><td class="en">initiate</td><td class="syn">start, begin, launch</td><td class="kr">개시하다</td></tr>
+    <tr><td class="en">integrate</td><td class="syn">combine, merge, unify</td><td class="kr">통합하다</td></tr>
+    <tr><td class="en">maintain</td><td class="syn">keep, preserve, sustain</td><td class="kr">유지하다, 주장하다</td></tr>
+    <tr><td class="en">modify</td><td class="syn">change, alter, adjust</td><td class="kr">수정하다</td></tr>
+    <tr><td class="en">obtain</td><td class="syn">get, acquire, secure</td><td class="kr">얻다</td></tr>
+    <tr><td class="en">overcome</td><td class="syn">conquer, surmount, beat</td><td class="kr">극복하다</td></tr>
+    <tr><td class="en">persist</td><td class="syn">continue, endure, remain</td><td class="kr">지속되다, 고집하다</td></tr>
+    <tr><td class="en">pursue</td><td class="syn">chase, seek, follow</td><td class="kr">추구하다</td></tr>
+    <tr><td class="en">reinforce</td><td class="syn">strengthen, support, bolster</td><td class="kr">강화하다</td></tr>
+    <tr><td class="en">reject</td><td class="syn">refuse, turn down, decline</td><td class="kr">거절하다</td></tr>
+    <tr><td class="en">reluctant (to)</td><td class="syn">unwilling, hesitant</td><td class="kr">꺼리는, 주저하는</td></tr>
+    <tr><td class="en">reside</td><td class="syn">live, dwell, inhabit</td><td class="kr">거주하다</td></tr>
+    <tr><td class="en">restore</td><td class="syn">bring back, repair, renew</td><td class="kr">복원하다, 회복시키다</td></tr>
+    <tr><td class="en">retain</td><td class="syn">keep, hold, preserve</td><td class="kr">유지하다, 보유하다</td></tr>
+    <tr><td class="en">reveal</td><td class="syn">disclose, show, uncover</td><td class="kr">드러내다, 밝히다</td></tr>
+    <tr><td class="en">seek</td><td class="syn">look for, pursue, search</td><td class="kr">찾다, 추구하다</td></tr>
+    <tr><td class="en">substitute</td><td class="syn">replace, swap</td><td class="kr">대체하다</td></tr>
+    <tr><td class="en">sustain</td><td class="syn">maintain, support, keep up</td><td class="kr">지속하다, 지탱하다</td></tr>
+    <tr><td class="en">transform</td><td class="syn">change, convert, alter</td><td class="kr">변형시키다</td></tr>
+    <tr><td class="en">undergo</td><td class="syn">experience, go through</td><td class="kr">겪다, 받다</td></tr>
+    <tr><td class="en">undertake</td><td class="syn">take on, attempt, begin</td><td class="kr">착수하다, 떠맡다</td></tr>
+    <tr><td class="en">utilize</td><td class="syn">use, employ, apply</td><td class="kr">활용하다</td></tr>
+    <tr><td class="en">withstand</td><td class="syn">resist, endure, bear</td><td class="kr">견디다, 버티다</td></tr>
+    <tr><td class="en">yield</td><td class="syn">produce, give, surrender</td><td class="kr">산출하다, 양보하다</td></tr>
+  </table>
+
+  <h2 class="section-title"><span class="idx">02</span>형용사</h2>
+  <table class="w-table">
+    <tr><th>단어</th><th>동의어</th><th>뜻</th></tr>
+    <tr><td class="en">abundant</td><td class="syn">plentiful, ample, rich</td><td class="kr">풍부한</td></tr>
+    <tr><td class="en">adequate</td><td class="syn">sufficient, enough, suitable</td><td class="kr">충분한, 적절한</td></tr>
+    <tr><td class="en">adverse</td><td class="syn">unfavorable, harmful, negative</td><td class="kr">부정적인, 불리한</td></tr>
+    <tr><td class="en">ambiguous</td><td class="syn">unclear, vague, uncertain</td><td class="kr">모호한</td></tr>
+    <tr><td class="en">apparent</td><td class="syn">obvious, evident, clear</td><td class="kr">명백한, 외견상의</td></tr>
+    <tr><td class="en">arduous</td><td class="syn">difficult, demanding, tough</td><td class="kr">힘든, 고된</td></tr>
+    <tr><td class="en">comprehensive</td><td class="syn">thorough, complete, extensive</td><td class="kr">포괄적인, 종합적인</td></tr>
+    <tr><td class="en">conventional</td><td class="syn">traditional, standard, usual</td><td class="kr">전통적인, 관습적인</td></tr>
+    <tr><td class="en">crucial</td><td class="syn">critical, vital, essential</td><td class="kr">결정적인, 중요한</td></tr>
+    <tr><td class="en">deliberate</td><td class="syn">intentional, planned, careful</td><td class="kr">의도적인, 신중한</td></tr>
+    <tr><td class="en">devastating</td><td class="syn">destructive, ruinous, severe</td><td class="kr">파괴적인, 엄청난</td></tr>
+    <tr><td class="en">distinct</td><td class="syn">separate, different, clear</td><td class="kr">뚜렷한, 별개의</td></tr>
+    <tr><td class="en">diverse</td><td class="syn">varied, various, assorted</td><td class="kr">다양한</td></tr>
+    <tr><td class="en">durable</td><td class="syn">lasting, sturdy, long-lasting</td><td class="kr">내구성 있는</td></tr>
+    <tr><td class="en">eminent</td><td class="syn">famous, distinguished, notable</td><td class="kr">저명한</td></tr>
+    <tr><td class="en">essential</td><td class="syn">necessary, vital, indispensable</td><td class="kr">필수적인</td></tr>
+    <tr><td class="en">exceptional</td><td class="syn">outstanding, remarkable, unusual</td><td class="kr">뛰어난, 이례적인</td></tr>
+    <tr><td class="en">extensive</td><td class="syn">wide, broad, far-reaching</td><td class="kr">광범위한</td></tr>
+    <tr><td class="en">feasible</td><td class="syn">possible, practical, workable</td><td class="kr">실현 가능한</td></tr>
+    <tr><td class="en">fundamental</td><td class="syn">basic, essential, core</td><td class="kr">근본적인</td></tr>
+    <tr><td class="en">imminent</td><td class="syn">impending, approaching, near</td><td class="kr">임박한</td></tr>
+    <tr><td class="en">inevitable</td><td class="syn">unavoidable, certain, bound to</td><td class="kr">불가피한</td></tr>
+    <tr><td class="en">influential</td><td class="syn">powerful, important, leading</td><td class="kr">영향력 있는</td></tr>
+    <tr><td class="en">innovative</td><td class="syn">creative, novel, groundbreaking</td><td class="kr">혁신적인</td></tr>
+    <tr><td class="en">intricate</td><td class="syn">complex, complicated, elaborate</td><td class="kr">복잡한, 정교한</td></tr>
+    <tr><td class="en">notable</td><td class="syn">remarkable, significant, noteworthy</td><td class="kr">주목할 만한</td></tr>
+    <tr><td class="en">numerous</td><td class="syn">many, countless, plentiful</td><td class="kr">수많은</td></tr>
+    <tr><td class="en">optimal</td><td class="syn">best, ideal, most favorable</td><td class="kr">최적의</td></tr>
+    <tr><td class="en">persistent</td><td class="syn">continuous, constant, determined</td><td class="kr">끈질긴, 지속적인</td></tr>
+    <tr><td class="en">precise</td><td class="syn">exact, accurate, specific</td><td class="kr">정확한</td></tr>
+    <tr><td class="en">predominant</td><td class="syn">main, chief, prevailing</td><td class="kr">지배적인, 주된</td></tr>
+    <tr><td class="en">profound</td><td class="syn">deep, significant, intense</td><td class="kr">깊은, 심오한</td></tr>
+    <tr><td class="en">prominent</td><td class="syn">well-known, leading, notable</td><td class="kr">저명한, 두드러진</td></tr>
+    <tr><td class="en">rigorous</td><td class="syn">strict, thorough, demanding</td><td class="kr">엄격한, 철저한</td></tr>
+    <tr><td class="en">scarce</td><td class="syn">rare, limited, in short supply</td><td class="kr">부족한, 희귀한</td></tr>
+    <tr><td class="en">significant</td><td class="syn">important, considerable, notable</td><td class="kr">중요한, 상당한</td></tr>
+    <tr><td class="en">subsequent</td><td class="syn">following, later, succeeding</td><td class="kr">이후의, 그다음의</td></tr>
+    <tr><td class="en">substantial</td><td class="syn">considerable, large, significant</td><td class="kr">상당한</td></tr>
+    <tr><td class="en">sufficient</td><td class="syn">enough, adequate, ample</td><td class="kr">충분한</td></tr>
+    <tr><td class="en">susceptible (to)</td><td class="syn">vulnerable, prone, liable</td><td class="kr">~에 취약한, 걸리기 쉬운</td></tr>
+    <tr><td class="en">tremendous</td><td class="syn">huge, enormous, immense</td><td class="kr">엄청난</td></tr>
+    <tr><td class="en">versatile</td><td class="syn">flexible, adaptable, all-purpose</td><td class="kr">다재다능한, 다용도의</td></tr>
+    <tr><td class="en">vigorous</td><td class="syn">energetic, strong, forceful</td><td class="kr">활발한, 격렬한</td></tr>
+    <tr><td class="en">widespread</td><td class="syn">extensive, prevalent, common</td><td class="kr">널리 퍼진</td></tr>
+  </table>
+
+  <h2 class="section-title"><span class="idx">03</span>명사</h2>
+  <table class="w-table">
+    <tr><th>단어</th><th>동의어</th><th>뜻</th></tr>
+    <tr><td class="en">aspect</td><td class="syn">feature, side, element</td><td class="kr">측면, 양상</td></tr>
+    <tr><td class="en">breakthrough</td><td class="syn">major advance, discovery</td><td class="kr">획기적 발전, 돌파구</td></tr>
+    <tr><td class="en">component</td><td class="syn">part, element, ingredient</td><td class="kr">구성 요소, 부품</td></tr>
+    <tr><td class="en">consequence</td><td class="syn">result, outcome, effect</td><td class="kr">결과</td></tr>
+    <tr><td class="en">controversy</td><td class="syn">dispute, debate, argument</td><td class="kr">논란</td></tr>
+    <tr><td class="en">decline</td><td class="syn">decrease, drop, fall</td><td class="kr">감소, 쇠퇴</td></tr>
+    <tr><td class="en">dedication</td><td class="syn">commitment, devotion</td><td class="kr">헌신</td></tr>
+    <tr><td class="en">expertise</td><td class="syn">skill, know-how, proficiency</td><td class="kr">전문 지식</td></tr>
+    <tr><td class="en">facility</td><td class="syn">building, establishment, center</td><td class="kr">시설</td></tr>
+    <tr><td class="en">hardship</td><td class="syn">difficulty, adversity, struggle</td><td class="kr">고난, 역경</td></tr>
+    <tr><td class="en">heritage</td><td class="syn">legacy, tradition, inheritance</td><td class="kr">유산</td></tr>
+    <tr><td class="en">hypothesis</td><td class="syn">theory, assumption, proposition</td><td class="kr">가설</td></tr>
+    <tr><td class="en">impact</td><td class="syn">effect, influence, consequence</td><td class="kr">영향</td></tr>
+    <tr><td class="en">incentive</td><td class="syn">motivation, encouragement, reward</td><td class="kr">유인책, 동기</td></tr>
+    <tr><td class="en">initiative</td><td class="syn">plan, program, first step</td><td class="kr">계획, 주도권</td></tr>
+    <tr><td class="en">innovation</td><td class="syn">invention, new development</td><td class="kr">혁신</td></tr>
+    <tr><td class="en">legacy</td><td class="syn">heritage, inheritance</td><td class="kr">유산, 남긴 것</td></tr>
+    <tr><td class="en">obstacle</td><td class="syn">barrier, hurdle, difficulty</td><td class="kr">장애물</td></tr>
+    <tr><td class="en">outcome</td><td class="syn">result, consequence, effect</td><td class="kr">결과</td></tr>
+    <tr><td class="en">phenomenon</td><td class="syn">occurrence, event, happening</td><td class="kr">현상</td></tr>
+    <tr><td class="en">precaution</td><td class="syn">safeguard, safety measure</td><td class="kr">예방 조치</td></tr>
+    <tr><td class="en">prospect</td><td class="syn">possibility, outlook, chance</td><td class="kr">전망, 가능성</td></tr>
+    <tr><td class="en">recognition</td><td class="syn">acknowledgment, credit, fame</td><td class="kr">인정, 인지</td></tr>
+    <tr><td class="en">reputation</td><td class="syn">standing, image, name</td><td class="kr">평판</td></tr>
+    <tr><td class="en">requirement</td><td class="syn">condition, necessity, prerequisite</td><td class="kr">요구 사항</td></tr>
+    <tr><td class="en">resource</td><td class="syn">supply, asset, means</td><td class="kr">자원</td></tr>
+    <tr><td class="en">shortage</td><td class="syn">lack, deficit, scarcity</td><td class="kr">부족</td></tr>
+    <tr><td class="en">strategy</td><td class="syn">plan, approach, method</td><td class="kr">전략</td></tr>
+    <tr><td class="en">tendency</td><td class="syn">trend, inclination, propensity</td><td class="kr">경향</td></tr>
+    <tr><td class="en">threat</td><td class="syn">danger, risk, menace</td><td class="kr">위협</td></tr>
+  </table>
+
+  <h2 class="section-title"><span class="idx">04</span>파트별 자주 나오는 어휘</h2>
+
+  <h3 class="sub-title">PART 1 — 인물 일대기</h3>
+  <table class="w-table">
+    <tr><td class="en">renowned</td><td class="syn">famous, celebrated</td><td class="kr">명성 있는</td></tr>
+    <tr><td class="en">pioneer</td><td class="syn">trailblazer, innovator</td><td class="kr">선구자</td></tr>
+    <tr><td class="en">apprentice</td><td class="syn">trainee, learner</td><td class="kr">견습생</td></tr>
+    <tr><td class="en">posthumously</td><td class="syn">after death</td><td class="kr">사후에</td></tr>
+    <tr><td class="en">acclaim</td><td class="syn">praise, applause</td><td class="kr">찬사</td></tr>
+    <tr><td class="en">succeed (to)</td><td class="syn">take over, inherit</td><td class="kr">계승하다</td></tr>
+    <tr><td class="en">enroll</td><td class="syn">sign up, register</td><td class="kr">등록하다, 입학하다</td></tr>
+  </table>
+
+  <h3 class="sub-title">PART 2 — 잡지 · 기사</h3>
+  <table class="w-table">
+    <tr><td class="en">conduct a study</td><td class="syn">carry out research</td><td class="kr">연구를 수행하다</td></tr>
+    <tr><td class="en">findings</td><td class="syn">results, conclusions</td><td class="kr">연구 결과</td></tr>
+    <tr><td class="en">participant</td><td class="syn">subject, volunteer</td><td class="kr">참가자</td></tr>
+    <tr><td class="en">correlation</td><td class="syn">link, connection, relationship</td><td class="kr">상관관계</td></tr>
+    <tr><td class="en">significantly</td><td class="syn">considerably, markedly</td><td class="kr">상당히</td></tr>
+    <tr><td class="en">attribute A to B</td><td class="syn">say A is caused by B</td><td class="kr">A를 B의 탓으로 돌리다</td></tr>
+  </table>
+
+  <h3 class="sub-title">PART 3 — 지식 백과</h3>
+  <table class="w-table">
+    <tr><td class="en">habitat</td><td class="syn">natural environment</td><td class="kr">서식지</td></tr>
+    <tr><td class="en">species</td><td class="syn">type, kind (of organism)</td><td class="kr">(생물) 종</td></tr>
+    <tr><td class="en">predator / prey</td><td class="syn">hunter / hunted animal</td><td class="kr">포식자 / 먹이</td></tr>
+    <tr><td class="en">nocturnal</td><td class="syn">active at night</td><td class="kr">야행성의</td></tr>
+    <tr><td class="en">extinct</td><td class="syn">died out, no longer existing</td><td class="kr">멸종된</td></tr>
+    <tr><td class="en">indigenous / native</td><td class="syn">originating in a place</td><td class="kr">토착의</td></tr>
+    <tr><td class="en">resemble</td><td class="syn">look like, be similar to</td><td class="kr">닮다</td></tr>
+  </table>
+
+  <h3 class="sub-title">PART 4 — 비즈니스 편지</h3>
+  <table class="w-table">
+    <tr><td class="en">inquire / inquiry</td><td class="syn">ask / question</td><td class="kr">문의하다 / 문의</td></tr>
+    <tr><td class="en">enclosed / attached</td><td class="syn">included with this letter</td><td class="kr">동봉된 / 첨부된</td></tr>
+    <tr><td class="en">at your earliest convenience</td><td class="syn">as soon as you can</td><td class="kr">가급적 빨리</td></tr>
+    <tr><td class="en">reimbursement</td><td class="syn">refund, repayment</td><td class="kr">환급, 상환</td></tr>
+    <tr><td class="en">compensation</td><td class="syn">payment, reimbursement</td><td class="kr">보상</td></tr>
+    <tr><td class="en">apologize for the inconvenience</td><td class="syn">say sorry for the trouble</td><td class="kr">불편을 끼쳐 사과하다</td></tr>
+    <tr><td class="en">look into</td><td class="syn">investigate, examine</td><td class="kr">조사하다</td></tr>
+    <tr><td class="en">on behalf of</td><td class="syn">representing, for</td><td class="kr">~를 대신하여</td></tr>
+  </table>
+
+  <h2 class="section-title"><span class="idx">05</span>헷갈리기 쉬운 짝</h2>
+  <table class="w-table">
+    <tr><th>단어</th><th>구분</th><th>뜻</th></tr>
+    <tr><td class="en">adopt / adapt</td><td class="syn">adopt=채택, adapt=적응</td><td class="kr">채택하다 / 적응하다</td></tr>
+    <tr><td class="en">affect / effect</td><td class="syn">affect=동사, effect=명사</td><td class="kr">영향을 주다 / 영향(결과)</td></tr>
+    <tr><td class="en">economic / economical</td><td class="syn">-ic=경제의, -ical=절약되는</td><td class="kr">경제의 / 경제적인(저렴한)</td></tr>
+    <tr><td class="en">considerable / considerate</td><td class="syn">-able=상당한, -ate=사려깊은</td><td class="kr">상당한 / 배려하는</td></tr>
+    <tr><td class="en">successful / successive</td><td class="syn">-ful=성공한, -ive=연속된</td><td class="kr">성공적인 / 연속적인</td></tr>
+    <tr><td class="en">sensible / sensitive</td><td class="syn">-ible=분별있는, -itive=민감한</td><td class="kr">분별 있는 / 민감한</td></tr>
+    <tr><td class="en">respectful / respective</td><td class="syn">-ful=공손한, -ive=각각의</td><td class="kr">공손한 / 각각의</td></tr>
+    <tr><td class="en">imminent / eminent</td><td class="syn">imm-=임박한, em-=저명한</td><td class="kr">임박한 / 저명한</td></tr>
+    <tr><td class="en">principal / principle</td><td class="syn">-pal=주요한/교장, -ple=원칙</td><td class="kr">주요한 / 원칙</td></tr>
+    <tr><td class="en">alter / altar</td><td class="syn">alter=바꾸다, altar=제단</td><td class="kr">바꾸다 / 제단</td></tr>
+  </table>
+
+  <h2 class="section-title"><span class="idx">06</span>암기 방법</h2>
+  <ul class="checklist">
+    <li><span class="box"></span>동의어 칸을 먼저 가리고, 단어를 보며 <b>바꿔 쓸 수 있는 말</b>을 떠올리는 연습을 한다</li>
+    <li><span class="box"></span>하루 30단어씩 7일이면 1회독 — 3회독 하는 것이 1회 정독보다 훨씬 효과적이다</li>
+    <li><span class="box"></span>동사 섹션을 가장 먼저 끝낸다. 어휘 문제에서 동사가 가장 많이 출제된다</li>
+    <li><span class="box"></span>모르는 단어는 뜻보다 <b>동의어 하나</b>만 확실히 붙여두면 선택지 대조에 충분하다</li>
+  </ul>
+
+  <div class="nav-footer">
+    <a class="prev" href="vocab.html"><span class="dir">← 이전</span>독해 패러프레이징</a>
+    <a class="next" href="../index.html"><span class="dir">목록 →</span>전체 목록으로</a>
+  </div>
+  <div class="to-index"><a href="../index.html">전체 목록 보기</a></div>
+
+</div>
+
+<script>
+function toggleHide() {
+  const on = document.body.classList.toggle('hide-kr');
+  const btn = document.getElementById('btn-hide');
+  btn.classList.toggle('on', on);
+  btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  if (!on) document.querySelectorAll('.reveal').forEach(e => e.classList.remove('reveal'));
+}
+document.addEventListener('click', e => {
+  if (!document.body.classList.contains('hide-kr')) return;
+  const cell = e.target.closest('.kr, .syn');
+  if (cell) cell.classList.add('reveal');
+});
+</script>
+</body>
+</html>
