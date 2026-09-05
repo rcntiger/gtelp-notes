@@ -404,3 +404,90 @@ a:focus-visible, .card-link:focus-visible {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ===========================================================
+   페이지 하단 확인문제 (js/quiz.js 와 함께 사용)
+   =========================================================== */
+
+.q-score {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+
+.q {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 15px 17px;
+  margin-bottom: 11px;
+}
+
+.q .qno {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.q .stem { font-size: 15px; margin-bottom: 11px; }
+.q .blank { font-family: var(--font-mono); color: var(--mark); font-weight: 700; }
+
+.opts { display: flex; flex-direction: column; gap: 6px; }
+
+.opt {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  padding: 8px 11px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 14px;
+  font-family: inherit;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+.opt:hover { border-color: var(--ink-soft); }
+.opt .lt { font-family: var(--font-mono); color: var(--ink-soft); flex-shrink: 0; }
+.opt.correct { background: var(--pass-bg); border-color: var(--pass); }
+.opt.correct .lt { color: var(--pass); font-weight: 700; }
+.opt.wrong { background: var(--fail-bg); border-color: var(--fail); }
+.opt.wrong .lt { color: var(--fail); font-weight: 700; }
+
+.sol {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 13px;
+  background: var(--mark-bg);
+  border-left: 3px solid var(--mark);
+  border-radius: var(--radius);
+  font-size: 13.5px;
+}
+.sol.show { display: block; }
+.sol .sol-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--mark);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.q-reset {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 4px;
+}
+.q-reset:hover { border-color: var(--ink); color: var(--ink); }
